@@ -1,5 +1,6 @@
 module Main exposing (..)
 
+import Navigation
 import Html exposing (Html, text, div, h1, img)
 import Html.Attributes exposing (src)
 
@@ -17,8 +18,8 @@ type alias Model =
     { route : Route }
 
 
-init : ( Model, Cmd Msg )
-init =
+init : Navigation.Location -> ( Model, Cmd Msg )
+init location =
     ( { route = Home }, Cmd.none )
 
 
@@ -27,7 +28,7 @@ init =
 
 
 type Msg
-    = NoOp
+    = UrlChange Navigation.Location
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -53,7 +54,7 @@ view model =
 
 main : Program Never Model Msg
 main =
-    Html.program
+    Navigation.program UrlChange
         { view = view
         , init = init
         , update = update
