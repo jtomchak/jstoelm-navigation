@@ -7,13 +7,19 @@ import Html.Attributes exposing (src)
 ---- MODEL ----
 
 
+type Route
+    = Home
+    | About
+    | Contact
+
+
 type alias Model =
-    {}
+    { route : Route }
 
 
 init : ( Model, Cmd Msg )
 init =
-    ( {}, Cmd.none )
+    ( { route = Home }, Cmd.none )
 
 
 
