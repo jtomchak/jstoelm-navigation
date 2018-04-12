@@ -68,7 +68,7 @@ viewLinks name =
 
 menu : Html Msg
 menu =
-    ul [] (List.map viewLinks [ "home", "about", "contact" ])
+    ul [] (List.map viewLinks [ "home", "about", "contact", "Bob" ])
 
 
 content : Model -> Html Msg

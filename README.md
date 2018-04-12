@@ -31,4 +31,11 @@ case msg of
             case location.hash of
 ```
 
-5.
+5.  With this in place we should be able to handle changes to the incoming url navigation as long as it's a hash `#` Let's render a list of items as our nav menu
+
+```elm
+menu =
+    ul [] (List.map viewLinks [ "home", "about", "contact", "Bob" ])
+```
+
+6.  Each viewLink will just be an 'a' tag with the corresponding href
